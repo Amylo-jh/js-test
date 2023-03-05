@@ -1,18 +1,9 @@
-import random from './getRandom'
+const numbers = [1,2,3,4]
+const fruits = ['Apple', 'Banana', 'Cherry']
 
-const a = random()
+numbers.splice(1, 1, 999, 998, 997)
 
-console.log(a)
+console.log(numbers)
 
-if(a === 0)
-{
-    console.log('a is 0')
-}
-else if(a === 2)
-{
-    console.log('a is 2')
-}
-else
-{
-    console.log('rest...')
-}
+fruits.splice(2, 0, 'ananas')
+console.log(fruits)
