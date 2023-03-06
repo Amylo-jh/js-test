@@ -1,9 +1,13 @@
-const numbers = [1,2,3,4]
-const fruits = ['Apple', 'Banana', 'Cherry']
+const user = {
+    name: 'amlylo',
+    age: 85,
+    email: 'amylose1110@gmail.com'
+}
 
-numbers.splice(1, 1, 999, 998, 997)
+const keys = Object.keys(user)
+console.log(keys)
 
-console.log(numbers)
+console.log(user['email'])
 
-fruits.splice(2, 0, 'ananas')
-console.log(fruits)
+const values = keys.map(key => user[key])
+console.log(values)
