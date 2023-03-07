@@ -1,13 +1,22 @@
+import _ from 'lodash'
+
 const user = {
-    name: 'amlylo',
+    name: 'amylo',
     age: 85,
-    email: 'amylose1110@gmail.com'
+    emails: ['amylose1110@gmail.com']
 }
 
-const keys = Object.keys(user)
-console.log(keys)
+const copyUser = _.cloneDeep(user)
+console.log(copyUser === user)
 
-console.log(user['email'])
+user.age = 22
+console.log('user', user)
+console.log('copyUser', copyUser)
 
-const values = keys.map(key => user[key])
-console.log(values)
+console.log('-----------')
+console.log('-----------')
+
+user.emails.push('neo@zillinks.com')
+console.log(user.emails === copyUser.emails)
+console.log('user', user)
+console.log('copyUser', copyUser)
