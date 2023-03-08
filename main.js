@@ -1,22 +1,17 @@
 import _ from 'lodash'
 
-const user = {
-    name: 'amylo',
-    age: 85,
-    emails: ['amylose1110@gmail.com']
-}
+const users = [
+    { userId: '1', name: 'amylo'},
+    { userId: '2', name: 'new'},
+    { userId: '3', name: 'amyy'},
+    { userId: '4', name: 'Evan'},
+    { userId: '5', name: 'Lewis'}
+]
 
-const copyUser = _.cloneDeep(user)
-console.log(copyUser === user)
+const foundUser = _.find(users, { name: 'amyy'})
+const foundUserIndex = _.findIndex(users, { name: 'amyy'})
+console.log(foundUser)
+console.log(foundUserIndex)
 
-user.age = 22
-console.log('user', user)
-console.log('copyUser', copyUser)
-
-console.log('-----------')
-console.log('-----------')
-
-user.emails.push('neo@zillinks.com')
-console.log(user.emails === copyUser.emails)
-console.log('user', user)
-console.log('copyUser', copyUser)
+_.remove(users, { name: 'amylo'})
+console.log(users)
