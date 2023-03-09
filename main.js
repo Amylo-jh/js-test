@@ -1,17 +1,15 @@
-import _ from 'lodash'
+import axios from 'axios'
 
-const users = [
-    { userId: '1', name: 'amylo'},
-    { userId: '2', name: 'new'},
-    { userId: '3', name: 'amyy'},
-    { userId: '4', name: 'Evan'},
-    { userId: '5', name: 'Lewis'}
-]
+function fetchMovies() {
+    axios
+        .get('https://www.omdbapi.com/?apikey=1451733a&s=frozen')
+        .then(res => {
+            console.log(res)
+            const h1El = document.querySelector('h1')
+            const imgEl = document.querySelector('img')
+            h1El.textContent = res.data.Search[0].Title
+            imgEl.src = res.data.Search[0].Poster
+        })
+}
 
-const foundUser = _.find(users, { name: 'amyy'})
-const foundUserIndex = _.findIndex(users, { name: 'amyy'})
-console.log(foundUser)
-console.log(foundUserIndex)
-
-_.remove(users, { name: 'amylo'})
-console.log(users)
+fetchMovies()
